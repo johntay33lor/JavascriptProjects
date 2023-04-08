@@ -8,7 +8,9 @@ function getHand() {
 // Define two objects for two players. Each player has name and getHand() properties.
 const player1 = { name: 'Player 1', getHand: getHand };
 const player2 = { name: 'Player 2', getHand: getHand };
-
+let playUntil = 3
+let player1Score = 0
+let player2Score = 0
 
 // Define a function called playRound() that
 // Takes two player objects as arguments
@@ -21,17 +23,22 @@ function playRound(player1, player2) {
     console.log(player2.name + ' plays ' + player2Hand);
     if (player1Hand == player2Hand) {
         console.log(" It's a tie! ")
+        console.log("")
         return winner;
     }
     else if (player1Hand == 'rock') {
         if (player2Hand == 'paper') {
             winner = player2.name;
+            player2Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
         else if (player2Hand == 'scissors') {
             winner = player1.name;
+            player1Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
     }
@@ -39,12 +46,16 @@ function playRound(player1, player2) {
     else if (player1Hand == 'paper') {
         if (player2Hand == 'rock') {
             winner = player1.name;
+            player1Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
         else if (player2Hand == 'scissors') {
             winner = player2.name;
+            player2Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
 
@@ -53,12 +64,16 @@ function playRound(player1, player2) {
     else if (player1Hand == 'scissors') {
         if (player2Hand === 'rock') {
             winner = player2.name;
+            player2Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
         else if (player2Hand === 'paper') {
             winner = player1.name;
+            player1Score++;
             console.log(winner + " is the winner! ");
+            console.log("")
             return winner;
         }
 
@@ -66,7 +81,33 @@ function playRound(player1, player2) {
 
 };
 
-playRound(player1, player2);
+//playRound(player1, player2);
+
+function playGame(player1, player2, playUntil) {
+    while (playUntil > player1Score &&  playUntil > player2Score ) {
+        playRound(player1, player2)
+        console.log("Player1 Score " + player1Score + " Player2 Score "  + player2Score);
+    }
+
+    if (player1Score > player2Score) {
+        console.log(player1.name + " wins!");
+        return player1;
+    }
+    else {
+        console.log(player2.name + " wins!");
+        return player2;
+    }
+};
+
+playGame(player1, player2, playUntil);
+console.log()
+
+
+
+
+
+
+
 
 
 
