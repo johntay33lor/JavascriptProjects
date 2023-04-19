@@ -1,0 +1,44 @@
+body {
+    background-color: slategray;
+    color: white;
+
+}
+#game-container {
+    text-align: center;
+  }
+  
+  #players {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+	
+  }
+  
+  #players div {
+    margin-right: 2rem;
+  }
+  
+  #game-buttons button {
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    background-color: navy;
+    color: #fff;
+	border-radius: 0.5rem
+  }
+  
+  #game-results {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  #round-winner {
+    font-weight: bold;
+  }
+  
+  #game-winner {
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+
+
