@@ -132,27 +132,3 @@ function playTournament(player1, player2, player3, player4, playUntil) {
 
 }
 playTournament(player1, player2, player3, player4, playUntil);
-
-
-
-
-
-
-
-
-
-
-
-// Determines the winner
-// Logs the hands played and name of the winner.
-// If its a tie, log the hands played and "it's a tie".
-// Returns the winner object (null if no winner)
-
-
-
-
-
-
-// app.js
-
-// Complete logic of game inside this function
